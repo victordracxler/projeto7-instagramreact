@@ -1,0 +1,497 @@
+* {
+    box-sizing: border-box;
+}
+ /* teste do commit do github para csb */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    background-color: #fafafa;
+    font-family: "Roboto", sans-serif;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.pointer,
+strong,
+.bttn,
+.s-arrow,
+.sbg,
+.s-user,
+.s-pfl,
+.profile-pic,
+.p-user,
+.likes img,
+video,
+.sidebar img,
+.profile-name,
+h5,
+h1,
+h3,
+.sidebar p
+{
+cursor: pointer;
+}
+
+/* Barra superior */
+.topbar {
+    width: 100%;
+    height: 54px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #dbdbdb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+/** Parte esquerda - Logos**/
+.topbar .logos-box {
+    display: flex;
+    align-items: center;
+}
+
+.topbar .logos-box .icon-logo {
+    width: 20px;
+    height: 20px;
+    padding-right: 10px;
+    border-right: 1px solid #dbdbdb;
+}
+
+.topbar .logos-box .img-logo {
+    width: 103px;
+    height: 29px;
+    margin-left: 10px;
+}
+
+/** Barra de pesquisa **/
+
+.topbar .searchbar {
+    background-color: #fafafa;
+    width: 215px;
+    height: 28px;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+    text-align: center;
+}
+
+.topbar .searchbar p {
+    height: 28px;
+    display: flex;
+    color: #979797;
+    font-size: 12px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+}
+
+/** Botões da barra superior **/
+.topbar .buttons {
+    height: 22px;
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+}
+
+
+.topbar-mobile {
+    display: none;
+}
+
+/**** Inicio do feed ****/
+.layout {
+    width: 935px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    margin-top: 88px;
+    width: 614px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*** Stories ***/
+.stories-bar {
+    background-color: #ffffff;
+    margin-bottom: 24px;
+    height: 118px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 18px 18px 14px 18px;
+    position: relative;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+}
+
+.stories-bar .s-arrow {
+    color: white;
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    top: 46px;
+    right: 8px;
+    z-index: 5;
+}
+
+.stories-bar .s-arrow .arrow {
+    height: 26px;
+    width: 26px;
+    filter: drop-shadow(2px 2px 4px gray);
+}
+
+.stories-bar .story {
+    position: relative;
+}
+
+.stories-bar .story .s-user {
+    height: 19px;
+    width: auto;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 400;
+
+    margin-right: 14px;
+}
+
+.stories-bar .story .sbg {
+    height: 66px;
+    width: 66px;
+    border-radius: 33px;
+    margin-right: 14px;
+}
+
+.stories-bar .story .s-pfl {
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    left: 5px;
+}
+
+/*** Feed ***/
+
+
+/* Cada post*/
+.feed .post {
+    margin-bottom: 60px;
+    border-radius: 3px;
+    border: 1px solid #dbdbdb;
+}
+
+/*Topo do post*/
+.feed .post .post-top {
+    background-color: #ffffff;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 17px;
+    position: relative;
+}
+
+/*Foto do usuario*/
+.feed .post .post-top .profile-pic {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+    
+}
+
+.feed .post .post-top .profile-pic img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/*username*/
+.feed .post .post-top .p-user {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/*Reticências*/
+.feed .post .post-top .post-options {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 17px;
+}
+
+/*Conteudo do post*/
+.feed .post .content img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 612px;
+    height: auto;
+}
+
+/*Parte inferior do post*/
+.feed .post .post-bottom {
+    background-color: #ffffff;
+    height: 76px;
+    padding: 13px 17px 0px 17px;
+}
+
+/*Botões da parte inferior do post*/
+.feed .post .post-bottom .controls {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+}
+
+.feed .post .post-bottom .controls .icons-left {
+    font-size: 22px;
+
+    height: 22px;
+    width: 88px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 13px;
+}
+
+.feed .post .post-bottom .controls .icons-right {
+    font-size: 22px;
+    height: auto;
+    width: auto;
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+
+.feed .post .post-bottom .likes {
+    display: flex;
+    height: 20px;
+    font-size: 14px;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.feed .post .post-bottom .likes img {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+/*** Sidebar ***/
+
+.container-sidebar {
+    width: 300px;
+}
+
+.sidebar {
+
+    width: 300px;
+    position: fixed;
+    top: 100px;
+    right: calc((100% - 935px) / 2);
+    z-index: 5;
+}
+
+.sidebar h1 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #262626;
+}
+
+.sidebar h2 {
+    font-size: 14px;
+    font-weight: 300;
+    color: #8e8e8e;
+}
+
+.sidebar h3 {
+    font-size: 12px;
+    font-weight: 400;
+    color: #8e8e8e;
+}
+
+.sidebar h4 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #8e8e8e;
+}
+
+.sidebar h5 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #262626;
+}
+
+.sidebar .profile {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.sidebar .profile img {
+    width: 56px;
+    height: 56px;
+    margin-right: 17px;
+    border-radius: 50%;
+}
+
+.sidebar .suggestions {
+    height: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.sidebar .recommended-profile {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 17px;
+}
+
+.sidebar .recommended-profile img {
+    height: 32px;
+    width: 32px;
+    margin-right: 11px;
+}
+
+.sidebar .recommended-profile p {
+    position: absolute;
+    right: 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #139ef2;
+}
+
+.sidebar .sidebar-text {
+    margin-top: 33px;
+    height: 74px;
+    color: #c7c7c7;
+    font-size: 11px;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bottom-menu {
+    display: none;
+}
+
+/********** Layout Desktop sem sidebar **********/
+
+@media (max-width: 935px) {
+
+    .container-sidebar {
+        display: none;
+    }
+
+    .layout {
+        width: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+/********** Layout Mobile **********/
+
+@media (max-width: 614px) {
+
+    .topbar-mobile {
+        font-size: 22px;
+        width: 100%;
+        height: 54px;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #dbdbdb;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        padding: 0 20px;
+    }
+
+    .topbar-mobile img {
+        width: 103px;
+        height: 29px;
+    }
+
+    .topbar {
+        display: none;
+    }
+
+
+    .stories-bar {
+        background: none;
+        margin-bottom: 0px;
+        height: 118px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+        padding: 18px 18px 14px 18px;
+        border-radius: 0;
+        border: 0;
+
+    }
+
+    .s-arrow {
+        display: none;
+    }
+
+    .container {
+        margin-top: 54px;
+        width: 100%;
+    }
+
+    .feed .post {
+
+        border-radius: 0;
+        border-right: none;
+        border-left: none;
+    }
+
+    .feed .post .content img {
+
+        width: 100%;
+        height: auto;
+    }
+
+    .bottom-menu {
+        display: flex;
+        width: 100%;
+        height: 54px;
+        background-color: #ffffff;
+        border-top: 1px solid #dbdbdb;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        font-size: 22px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 19px;
+    }
+
+}
