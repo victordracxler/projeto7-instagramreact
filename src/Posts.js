@@ -2,7 +2,7 @@ function Post(props){
     return(
         <div class="post">
                     <div class="post-top">
-                        <div class="profile-pic"><img src={props.profilePic} alt="profile picture"/></div>
+                        <div class="profile-pic"><img src={props.profilePic} alt="profile"/></div>
                         <div class="username">
                             <p class="p-user">{props.username}</p>
                         </div>

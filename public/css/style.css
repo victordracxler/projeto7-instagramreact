@@ -342,6 +342,9 @@ cursor: pointer;
     font-size: 14px;
     margin-bottom: 24px;
 }
+.sidebar .username-change{
+    display: flex;
+}
 
 .sidebar .profile img {
     width: 56px;

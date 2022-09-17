@@ -1,12 +1,19 @@
+import React from "react";
+
 function User() {
+
+  const [name, setName] = React.useState('Victor Dracxler')
+  const [picture, setPicture] = React.useState("imgs/profiles/victordracxler.jpg")
+
+
   return (
     <div class="profile">
-      <img src="imgs\profiles\victordracxler.jpg" alt="" />
+      <img onClick={() => setPicture(prompt('Insira a url da imagem de perfil:'))} src={picture} alt="" />
       <div class="profile-name">
         <h1>
           <strong>victordracxler</strong>
         </h1>
-        <h2>Victor Dracxler</h2>
+        <div class="username-change"><h2>{name}</h2><ion-icon onClick={() => setName(prompt('Editar nome de usuário'))} name="pencil-outline"></ion-icon></div>
       </div>
     </div>
   );
