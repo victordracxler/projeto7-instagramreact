@@ -43,7 +43,7 @@ function Post(props){
                             <ion-icon class="bttn" name="ellipsis-horizontal"></ion-icon>
                         </div>
                     </div>
-                    <div class="content"><img src={props.content} alt="media"/></div>
+                    <div class="content"><img onDoubleClick={() => setLiked(true)} src={props.content} alt="media"/></div>
                     <div class="post-bottom">
                         <div class="controls">
                             <div class="icons-left">
