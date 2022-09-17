@@ -1,67 +1,77 @@
-function User() {}
-
-function Suggestion() {}
-
-function Suggestions() {}
-
-export default function Sidebar() {
+function User() {
   return (
-    <div class="sidebar">
-      <div class="profile">
-        <img src="imgs\profiles\victordracxler.jpg" />
-        <div class="profile-name">
-          <h1>
-            <strong>victordracxler</strong>
-          </h1>
-          <h2>Victor Dracxler</h2>
-        </div>
+    <div class="profile">
+      <img src="imgs\profiles\victordracxler.jpg" alt="" />
+      <div class="profile-name">
+        <h1>
+          <strong>victordracxler</strong>
+        </h1>
+        <h2>Victor Dracxler</h2>
       </div>
+    </div>
+  );
+}
+
+function Suggestion(props) {
+  return (
+    <div class="recommended-profile">
+      <img src={props.image} alt={props.name} />
+      <div>
+        <h1>{props.name}</h1>
+        <h3>{(props.follower)? "Segue você": "Novo no Instagram"}</h3>
+      </div>
+      <p>Seguir</p>
+    </div>
+  );
+}
+
+function Suggestions() {
+  const recommendations = [
+    {
+      name: "bad.vibes.memes",
+      image: "imgs/profiles/badvibesmemes 1.png",
+      follower: true,
+    },
+    {
+      name: "chibirdart",
+      image: "imgs/profiles/chibirdart 1.png",
+      follower: true,
+    },
+    {
+      name: "razoesparaacreditar",
+      image: "imgs/profiles/razoesparaacreditar 1.png",
+      follower: false,
+    },
+    {
+      name: "adorable_animals",
+      image: "imgs/profiles/adorableanimals 1.png",
+      follower: true,
+    },
+    {
+      name: "smallcutecats",
+      image: "imgs/profiles/smallcutecats 1.png",
+      follower: false,
+    },
+  ];
+
+  return (
+    <>
       <div class="suggestions">
         <h4>Sugestões para você</h4>
         <h5>Ver tudo</h5>
       </div>
       <div class="recommended">
-        <div class="recommended-profile">
-          <img src="imgs\profiles\badvibesmemes 1.png" />
-          <div>
-            <h1>bad.vibes.memes</h1>
-            <h3>Segue você</h3>
-          </div>
-          <p>Seguir</p>
-        </div>
-        <div class="recommended-profile">
-          <img src="imgs\profiles\chibirdart 1.png" />
-          <div>
-            <h1>chibirdart</h1>
-            <h3>Segue você</h3>
-          </div>
-          <p>Seguir</p>
-        </div>
-        <div class="recommended-profile">
-          <img src="imgs\profiles\razoesparaacreditar 1.png" />
-          <div>
-            <h1>razoesparaacreditar</h1>
-            <h3>Novo no Instagram</h3>
-          </div>
-          <p>Seguir</p>
-        </div>
-        <div class="recommended-profile">
-          <img src="imgs\profiles\adorableanimals 1.png" />
-          <div>
-            <h1>adorable_animals</h1>
-            <h3>Segue você</h3>
-          </div>
-          <p>Seguir</p>
-        </div>
-        <div class="recommended-profile">
-          <img src="imgs\profiles\smallcutecats 1.png" />
-          <div>
-            <h1>smallcutecats</h1>
-            <h3>Segue você</h3>
-          </div>
-          <p>Seguir</p>
-        </div>
+        {recommendations.map(Suggestion)}
       </div>
+    </>
+  );
+}
+
+export default function Sidebar() {
+  return (
+    <div class="sidebar">
+      <User />
+      <Suggestions />
       <div class="sidebar-text">
         <p>
           Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade • Termos •
@@ -70,5 +80,5 @@ export default function Sidebar() {
         <p>© 2021 INSTAGRAM DO FACEBOOK</p>
       </div>
     </div>
-  )
+  );
 }
