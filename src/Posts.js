@@ -1,4 +1,23 @@
+import React from "react"
+
 function Post(props){
+
+    const [saved, setSaved] = React.useState(false)
+
+    
+    function RenderBookmark(props){
+        if (props.boolean === true){            
+           return(
+             <ion-icon onClick={() => setSaved(false)} class="bttn icon-save" name="bookmark"></ion-icon>
+           )
+        }else{
+            return(
+                <ion-icon onClick={() => setSaved(true)} class="bttn icon-save" name="bookmark-outline"></ion-icon>
+            )
+        }
+    }
+
+
     return(
         <div class="post">
                     <div class="post-top">
@@ -19,7 +38,7 @@ function Post(props){
                                 <ion-icon class="bttn icon" name="paper-plane-outline"></ion-icon>
                             </div>
                             <div class="icons-right">
-                                <ion-icon class="bttn icon-save" name="bookmark-outline"></ion-icon>
+                                <RenderBookmark boolean={saved}/>
                             </div>
                         </div>
                         <div class="likes">
@@ -41,7 +60,9 @@ export default function Posts(){
             content: "imgs/feed/gato-telefone 1.png",
             likedByName: "adorable_animals",
             likedByPic: "imgs/profiles/adorableanimals 2.png",
-            likes: 99159
+            likes: 99159,
+            liked: false,
+            saved: false
         },
         {
             username: "barked",
@@ -49,7 +70,9 @@ export default function Posts(){
             content: "imgs/feed/dog 1.png",
             likedByName: "meltedvideos",
             likedByPic: "imgs/profiles/Melted.jpg",
-            likes: 69329
+            likes: 69329,
+            liked: false,
+            saved: false
         },
         {
             username: "meltedvideos",
@@ -57,7 +80,9 @@ export default function Posts(){
             content: "imgs/feed/meltedProblem.jpg",
             likedByName: "respondeai",
             likedByPic: "imgs/profiles/respondeai 2.png",
-            likes: 103420
+            likes: 103420,
+            liked: false,
+            saved: false
         },
         {
             username: "meltedvideos",
@@ -65,7 +90,9 @@ export default function Posts(){
             content: "imgs/feed/meltedSims.jpg",
             likedByName: "bad.vibes.memes",
             likedByPic: "imgs/profiles/badvibesmemes 1.png",
-            likes: 69321
+            likes: 69321,
+            liked: false,
+            saved: false
         },
         
     ]
