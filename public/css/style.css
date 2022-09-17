@@ -267,6 +267,10 @@ cursor: pointer;
     margin-right: 13px;
 }
 
+.feed .post .post-bottom .controls .icons-left .liked{
+    color: red;
+}
+
 .feed .post .post-bottom .controls .icons-right {
     font-size: 22px;
     height: auto;

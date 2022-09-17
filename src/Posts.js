@@ -2,8 +2,9 @@ import React from "react"
 
 function Post(props){
 
-    const [saved, setSaved] = React.useState(false)
-
+    const [saved, setSaved] = React.useState(props.bookmarked)
+    const [liked, setLiked] = React.useState(props.liked)
+    
     
     function RenderBookmark(props){
         if (props.boolean === true){            
@@ -16,6 +17,19 @@ function Post(props){
             )
         }
     }
+
+    function RenderLike(props){
+        if (props.boolean === true){            
+            return(
+              <ion-icon onClick={() => setLiked(false)} class="bttn icon-heart liked" name="heart"></ion-icon>
+            )
+         }else{
+             return(
+                <ion-icon onClick={() => setLiked(true)} class="bttn icon-heart" name="heart-outline"></ion-icon>
+             )
+         }
+     }
+    
 
 
     return(
@@ -33,7 +47,7 @@ function Post(props){
                     <div class="post-bottom">
                         <div class="controls">
                             <div class="icons-left">
-                                <ion-icon class="bttn icon-heart" name="heart-outline"></ion-icon>
+                                <RenderLike boolean={liked}/>
                                 <ion-icon class="bttn icon" name="chatbubble-outline"></ion-icon>
                                 <ion-icon class="bttn icon" name="paper-plane-outline"></ion-icon>
                             </div>
@@ -43,7 +57,7 @@ function Post(props){
                         </div>
                         <div class="likes">
                             <img src={props.likedByPic} alt="user that liked your post"/>
-                            <p>Curtido por <strong>{props.likedByName}</strong> e <strong>outras {props.likes.toLocaleString('pt-BR')} pessoas</strong>
+                            <p>Curtido por <strong>{props.likedByName}</strong> e <strong>outras {(liked)? (props.likes + 1).toLocaleString('pt-BR'):props.likes.toLocaleString('pt-BR')} pessoas</strong>
                             </p>
                         </div>
                     </div>
@@ -62,7 +76,7 @@ export default function Posts(){
             likedByPic: "imgs/profiles/adorableanimals 2.png",
             likes: 99159,
             liked: false,
-            saved: false
+            bookmarked: false
         },
         {
             username: "barked",
@@ -72,7 +86,7 @@ export default function Posts(){
             likedByPic: "imgs/profiles/Melted.jpg",
             likes: 69329,
             liked: false,
-            saved: false
+            bookmarked: false
         },
         {
             username: "meltedvideos",
@@ -82,7 +96,7 @@ export default function Posts(){
             likedByPic: "imgs/profiles/respondeai 2.png",
             likes: 103420,
             liked: false,
-            saved: false
+            bookmarked: false
         },
         {
             username: "meltedvideos",
@@ -92,7 +106,7 @@ export default function Posts(){
             likedByPic: "imgs/profiles/badvibesmemes 1.png",
             likes: 69321,
             liked: false,
-            saved: false
+            bookmarked: false
         },
         
     ]
