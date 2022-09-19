@@ -40,7 +40,7 @@ export default function Stories(){
             image: 'imgs/stories/filomoderna 1.png'
         },
         {
-            username:'memeriagourmet',
+            username:'memeriag...',
             image: 'imgs/stories/memeriagourmet 1.png'
         }
     ]

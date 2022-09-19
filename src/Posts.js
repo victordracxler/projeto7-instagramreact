@@ -19,7 +19,8 @@ function Post(props){
     }
 
     function RenderLike(props){
-        if (props.boolean === true){            
+        if (props.boolean === true){    
+                    
             return(
               <ion-icon onClick={() => setLiked(false)} class="bttn icon-heart liked" name="heart"></ion-icon>
             )
@@ -30,7 +31,8 @@ function Post(props){
          }
      }
     
-
+     
+     
 
     return(
         <div class="post">
@@ -43,7 +45,9 @@ function Post(props){
                             <ion-icon class="bttn" name="ellipsis-horizontal"></ion-icon>
                         </div>
                     </div>
-                    <div class="content"><img onDoubleClick={() => setLiked(true)} src={props.content} alt="media"/></div>
+                        <div class={(liked)? "content heart": "content"}><img onDoubleClick={() => setLiked(true)} src={props.content} alt="media"/>
+                        <ion-icon class="bttn icon-heart" name="heart"></ion-icon>
+                    </div>
                     <div class="post-bottom">
                         <div class="controls">
                             <div class="icons-left">

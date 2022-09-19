@@ -267,9 +267,53 @@ cursor: pointer;
     margin-right: 13px;
 }
 
+/* Like*/
+.feed .post .content{
+    position: relative;
+}
+.feed .post .content .icon-heart {
+    color: white;
+    font-size: 180px;
+    position: absolute;
+    z-index: 5;
+    left: calc(50% - 90px);
+    top: calc(50% - 90px);
+    display: none;
+}
+.feed .post .heart .icon-heart {
+    display: block;
+    animation: 1.2s like-heart-animation ease-in-out forwards;
+}
+
 .feed .post .post-bottom .controls .icons-left .liked{
     color: red;
+    
 }
+@keyframes like-heart-animation {
+    0%,
+    to {
+      opacity: 0;
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    }
+    15% {
+      opacity: 0.9;
+      -webkit-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+    30% {
+      -webkit-transform: scale(0.95);
+      transform: scale(0.95);
+    }
+    45%,
+    80% {
+      opacity: 0.9;
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+
+/* fim do like */
 
 .feed .post .post-bottom .controls .icons-right {
     font-size: 22px;
@@ -457,7 +501,7 @@ cursor: pointer;
         flex-direction: row;
         align-items: center;
         justify-content: flex-start;
-        overflow: hidden;
+        overflow-x: auto;
         padding: 18px 18px 14px 18px;
         border-radius: 0;
         border: 0;
